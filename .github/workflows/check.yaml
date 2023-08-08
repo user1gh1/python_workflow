@@ -18,14 +18,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Testing
-        run: python test_division.py
-  report:
-    needs: test
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output information
-        run: echo "Test Fail"
+        run: python test_division.py 
   deploy:
     needs: test
     if : success()
@@ -46,3 +39,10 @@ jobs:
           
       - name: Deploy
         run: python division.py
+  report:
+    needs: test
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: echo "Test Fail"
