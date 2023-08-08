@@ -6,6 +6,16 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '4.7'
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
       - name: Testing
         run: python test_division.py
   report:
@@ -17,9 +27,10 @@ jobs:
         run: echo "Test Fail"
   deploy:
     needs: test
+    if : success()
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
       - name: Deploy
-        run: division.py
+        run: python division.py
