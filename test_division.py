@@ -4,7 +4,7 @@ import yaml
 from division import *
 
 
-with open('./github/workflows/check.yaml', 'r') as file:
+with open('./.github/workflows/check.yaml', 'r') as file:
     config: dict = yaml.safe_load(file)
 print(config['number1'])
 #x = yaml.load("""a: 45\nb: cheese\nc: 7.8""")
