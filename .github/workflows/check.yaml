@@ -38,6 +38,9 @@ jobs:
       - name: Testing
         run: python test_division.py > result.txt
 
+      - name: Print test output
+        run: cat result.txt
+
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
         with:
@@ -81,8 +84,5 @@ jobs:
       - name: 'Echo download '
         run: cat result.txt   
         
-      - name: 'Echo download with path'
-        run: cat result/result.txt 
-
       - name: Output information
         run: echo "Test Fail"
