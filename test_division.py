@@ -2,11 +2,13 @@ import unittest
 import os
 import yaml
 from division import *
+from pprint import pprint
 
 
 with open('./.github/workflows/check.yaml', 'r') as file:
     config: dict = yaml.safe_load(file)
-print(config['number1'])
+pprint(config, sort_dicts=False)
+#print(config['number1'])
 #x = yaml.load("""a: 45\nb: cheese\nc: 7.8""")
 
 number1 = os.environ.get('number1')
