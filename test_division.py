@@ -1,9 +1,13 @@
 import unittest
 import os
+# import yaml
 
+# x = yaml.load("""a: 45\nb: cheese\nc: 7.8""")
 number1 = os.environ.get('number1')
 number2 = os.environ.get('number2')
 answer = os.environ.get('answer')
+
+print (number1)
 
 from division import *
 
