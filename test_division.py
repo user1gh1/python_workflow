@@ -9,7 +9,6 @@ with open('./.github/workflows/check.yaml', 'r') as file:
     config: dict = yaml.safe_load(file)
 pprint(config, sort_dicts=False)
 #print(config['number1'])
-#x = yaml.load("""a: 45\nb: cheese\nc: 7.8""")
 a = dict[True]['workflow_dispatch']['inputs']['number1']['default']
 b = dict[True]['workflow_dispatch']['inputs']['number2']['default']
 c = dict[True]['workflow_dispatch']['inputs']['answer']['default']
