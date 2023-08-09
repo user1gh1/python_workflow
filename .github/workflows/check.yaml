@@ -1,5 +1,22 @@
 name: Test Project
-on: [push, workflow_dispatch]
+
+on: 
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: 'Test number1'
+        required: true
+        default: '10'
+      number2:
+        description: 'Test number2'
+        required: true
+        default: '10'
+      answer: 
+        description: 'Test answer'
+        required: true
+        default: '10'
+        
+
 jobs:
   test:
     runs-on: ubuntu-latest
