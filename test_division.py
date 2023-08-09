@@ -1,8 +1,12 @@
 import unittest
 import os
+import yaml
 from division import *
 
-# import yaml
+
+with open('config.yaml', 'r') as file:
+    config: dict = yaml.safe_load(file)
+print(config['number1'])
 #x = yaml.load("""a: 45\nb: cheese\nc: 7.8""")
 
 number1 = os.environ.get('number1')
