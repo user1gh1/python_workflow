@@ -37,7 +37,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Testing
-        run: python test_division.py > result.txt
+        run: python test_division.py > result.txt 2>&1
 
       - name: Print test output
         run: cat result.txt
