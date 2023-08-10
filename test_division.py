@@ -17,10 +17,6 @@ number1 = float(os.environ.get("number1"))
 number2 = float(os.environ.get('number2'))
 answer = float(os.environ.get('answer'))
 
-print (number1)
-number1 = os.getenv("number1")
-print (number1)
-
 
 
 class DivisionTest(unittest.TestCase):
