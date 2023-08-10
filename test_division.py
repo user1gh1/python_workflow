@@ -1,23 +1,10 @@
 import unittest
 import os
-import yaml
 from division import *
-from pprint import pprint
 
-
-with open('./.github/workflows/check.yaml', 'r') as file:
-    config: dict = yaml.safe_load(file)
-pprint(config, sort_dicts=False)
-#print(config['number1'])
-#a = dict[True]['workflow_dispatch']['inputs']['number1']['default']
-#b = dict[True]['workflow_dispatch']['inputs']['number2']['default']
-#c = dict[True]['workflow_dispatch']['inputs']['answer']['default']
-#print (a)
 number1 = float(os.environ.get("number1"))
 number2 = float(os.environ.get('number2'))
 answer = float(os.environ.get('answer'))
-
-
 
 class DivisionTest(unittest.TestCase):
     def test_division(self):
