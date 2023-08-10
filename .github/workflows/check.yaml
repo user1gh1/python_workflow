@@ -40,6 +40,10 @@ jobs:
         run: |
           export number1=${{ github.event.inputs.number1 }}
           echo $number1
+      - name: echo
+        run: |
+          echo $number1
+          echo ${{inputs.number1}}
       - name: Testing
         run: |
           export number1=${{ github.event.inputs.number1 }}
