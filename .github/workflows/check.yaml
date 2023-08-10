@@ -43,11 +43,7 @@ jobs:
       - name: Testing
         run: |
           export number1=${{ github.event.inputs.number1 }}
-          python test_division.py 2> testIssues.txt
-
-      - name: Print test output
-        run: cat result.txt
-        if: ${{ always() }}
+          python test_division.py 2> testIssues.txt   
 
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
