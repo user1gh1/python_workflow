@@ -41,7 +41,9 @@ jobs:
           export number1=${{ github.event.inputs.number1 }}
           echo $number1
       - name: Testing
-        run: python test_division.py > result.txt
+        run: |
+          number1: ${{number1}}
+          python test_division.py > result.txt
 
       - name: Print test output
         run: cat result.txt
