@@ -21,8 +21,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    env:
-      number1: ${{number1}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -38,7 +36,8 @@ jobs:
           
           
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
+      - name: Export var
+        run: export number1=${{inputs.number1}}
       - name: Testing
         run: python test_division.py > result.txt
 
