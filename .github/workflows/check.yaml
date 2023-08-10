@@ -18,8 +18,11 @@ on:
         
 
 jobs:
+
   test:
     runs-on: ubuntu-latest
+    env:
+      number1: ${{number1}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
