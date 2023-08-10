@@ -16,7 +16,12 @@ on:
         required: true
         default: '10'
         
-
+        
+env:
+  number1: ${{inputs.number1}}
+  number2: ${{inputs.number2}}
+  answer: ${{inputs.answer}}  
+  
 jobs:
 
   test:
