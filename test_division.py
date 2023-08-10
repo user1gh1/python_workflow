@@ -13,9 +13,9 @@ pprint(config, sort_dicts=False)
 #b = dict[True]['workflow_dispatch']['inputs']['number2']['default']
 #c = dict[True]['workflow_dispatch']['inputs']['answer']['default']
 #print (a)
-number1 = os.environ.get("number1")
-number2 = os.environ.get('number2')
-answer = os.environ.get('answer')
+number1 = float(os.environ.get("number1"))
+number2 = float(os.environ.get('number2'))
+answer = float(os.environ.get('answer'))
 
 print (number1)
 number1 = os.getenv("number1")
