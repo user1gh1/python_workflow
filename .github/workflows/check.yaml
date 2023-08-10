@@ -52,8 +52,8 @@ jobs:
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
         with:
-          name: result
-          path: result.txt
+          name: testIssues
+          path: testIssues.txt
         if: ${{ always() }}   
   deploy:
     needs: test
@@ -82,15 +82,14 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
-        id: download
         with:
-          name: result
+          name: testIssues
 
       - name: Display structure of downloaded files
         run: ls -R
         
       - name: 'Echo download '
-        run: cat result.txt   
+        run: cat testIssues.txt   
         
       - name: Output information
         run: echo "Test Fail"
