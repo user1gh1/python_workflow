@@ -42,7 +42,7 @@ jobs:
           echo $number1
       - name: Testing
         run: |
-          number1: ${{number1}}
+          export number1=${{ github.event.inputs.number1 }}
           python test_division.py > result.txt
 
       - name: Print test output
